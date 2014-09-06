@@ -20,6 +20,19 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+
+		//Styles
+    	less: {
+			dev: {
+				options: {
+					paths: ["../css/"]
+				},
+				files: {
+					"../css/index.css": "../css/index.less"
+				}
+			}
+    	},
+
     	meta : {      
 			basePath: './',
 			srcPath: './',
@@ -48,9 +61,12 @@ module.exports = function(grunt) {
 	// Load the plugin that provides the "grunt-bower-task" task.
 	grunt.loadNpmTasks('grunt-bower-task');
 
+	// Load the plugin that provides the "grunt-contrib-less" task.
+	grunt.loadNpmTasks('grunt-contrib-less');
+
 	// Load the plugin that provides the "grunt-contrib-yuidoc" task.
 	grunt.loadNpmTasks('grunt-contrib-yuidoc');
 
 	// Default task(s).
-	grunt.registerTask('dev', ['bower', 'yuidoc']);
+	grunt.registerTask('dev', ['bower', 'yuidoc', 'less']);
 };
