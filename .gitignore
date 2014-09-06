@@ -1,5 +1,3 @@
-node_modules
-vendor
-dev
-release
-docs
+js/node_modules
+js/vendor
+js/docs
