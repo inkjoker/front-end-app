@@ -1,0 +1,26 @@
+{{for products}}
+	<div class="b-product_unit" product-id="{{:productId}}">
+		<div class="b-product_image">
+			{{if saleSize}}
+				<span class="b-product_status b-product_status__type"></span>
+			{{/if}}
+			<img src="{{:image}}" alt="product image">
+			{{if saleSize}}
+				<span class="b-product_status b-product_status__info">{{:saleSize}}</span>
+			{{/if}}
+			<a class="b-product_title" href="#">{{:product}}</a>
+		</div>
+		<div class="b-product_ctrl">
+			<span class="b-product_price">
+				{{if saleSize}}
+					<span class="b-product_price__new"><b>{{:price.new}}</b> руб.</span>
+					<span class="b-product_price__old"><b>{{:price.old}}</b> руб.</span>
+				{{else}}
+					<span class="b-product_price__full"><b>{{:price.full}}</b> руб.</span>
+				{{/if}}
+			</span>
+			<span class="b-product_button b-product_button__flag"></span>
+			<span class="b-product_button b-product_button__buy js-addProduct"></span>
+		</div>
+	</div>
+{{/for}}

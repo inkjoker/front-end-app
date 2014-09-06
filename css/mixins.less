@@ -1,0 +1,97 @@
+/*-- Styles variables --*/
+@color-m: #6f6f6f;
+@color-e: #ED4947;
+@color-l-d: #2c82b9;
+@color-l-l: #5dacdf;
+@color-l-e: #85bde3;
+@color-border: #e8e8e8;
+
+/*-- Styles mixins --*/
+.box-shadow(@arguments) {
+	-webkit-box-shadow: @arguments;
+	-moz-box-shadow: @arguments;
+	box-shadow: @arguments;
+}
+.box-sizing(@sizing: border-box) {
+	-ms-box-sizing: @sizing;
+	-moz-box-sizing: @sizing;
+	-webkit-box-sizing: @sizing;
+	box-sizing: @sizing;
+}
+.user-select(@argument: none) {
+	-webkit-user-select: @argument;
+	-moz-user-select: @argument;
+	-ms-user-select: @argument;
+	user-select: @argument;
+}
+
+.rounded(@radius: 2px) {
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	border-radius: @radius;
+}
+
+.gradient(@color: #F5F5F5, @start: #EEE, @stop: #FFF) {
+  background: @color;
+  background: -webkit-gradient(linear,
+                               left bottom,
+                               left top,
+                               color-stop(0, @start),
+                               color-stop(1, @stop));
+  background: -ms-linear-gradient(bottom,
+                                  @start,
+                                  @stop);
+  background: -moz-linear-gradient(center bottom,
+                                   @start 0%,
+                                   @stop 100%);
+  background: -o-linear-gradient(@stop,
+                                 @start);
+  filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@stop,@start));
+}
+
+.animate(@params) {
+    -webkit-animation:@params;
+    -moz-animation:@params;
+    animation:@params;
+}
+
+.display-flex {
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+.flex(@param: 1 1 100%){
+	-webkit-box-flex: @param;      /* OLD - iOS 6-, Safari 3.1-6 */
+	-moz-box-flex: @param;         /* OLD - Firefox 19- */
+	-webkit-flex: @param;          /* Chrome */
+	-ms-flex: @param;              /* IE 10 */
+	flex: @param;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+.flex-aling(@aling: left) {
+	-ms-aling-items: @aling;
+	aling-items: @aling;
+}
+
+.flex-wrap(@wrap: wrap) {
+	-webkit-flex-wrap: @wrap;
+	-ms-flex-wrap: @wrap;
+	flex-wrap: @wrap;
+}
+
+.flex-order(@order: 1) {
+	-webkit-box-ordinal-group: @order;   /* OLD - iOS 6-, Safari 3.1-6 */
+	-moz-box-ordinal-group: @order2;      /* OLD - Firefox 19- */
+	-ms-flex-order: @order;              /* TWEENER - IE 10 */
+	-webkit-order: @order;               /* NEW - Chrome */
+	order: @order;                       /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+.flex-direction(@flex-direction) {
+	-ms-flex-direction:@flex-direction;
+	flex-direction:@flex-direction;
+}
+
