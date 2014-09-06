@@ -2,6 +2,11 @@ module.exports = function(grunt) {
 
 	// Project configuration.
 	grunt.initConfig({
+		//Clean up dir
+		clean: {
+			docs: ["docs/"]
+		},
+
 		bower: {
 			install: {
 				options: {
@@ -14,12 +19,38 @@ module.exports = function(grunt) {
 					bowerOptions: {}
 				}
 			}
+		},
+    	meta : {      
+			basePath: './',
+			srcPath: './',
+			docsPath: './docs/'
+		},
+
+		//Project documentation
+		pkg: grunt.file.readJSON('yuidoc.json'),
+
+		yuidoc: {
+			compile: {
+				name: '<%= pkg.name %>',
+				description: '<%= pkg.description %>',
+				version: '<%= pkg.version %>',
+				url: '<%= pkg.homepage %>',
+				options: {
+					syntaxtype: "js",
+					extension: ".js",
+					paths: '<%= meta.srcPath %>',
+					outdir: '<%= meta.docsPath %>',
+				}
+			}
 		}
 	});
 
 	// Load the plugin that provides the "grunt-bower-task" task.
 	grunt.loadNpmTasks('grunt-bower-task');
 
+	// Load the plugin that provides the "grunt-contrib-yuidoc" task.
+	grunt.loadNpmTasks('grunt-contrib-yuidoc');
+
 	// Default task(s).
-	grunt.registerTask('default', ['bower']);
+	grunt.registerTask('dev', ['bower', 'yuidoc']);
 };
