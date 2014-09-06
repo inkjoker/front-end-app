@@ -1,6 +1,6 @@
 (function() {
 	define(function(require, exports, module) {
-		var test = require('js/test');
+		var test = require('test');
 	});
 
 }).call(this);
