@@ -1,6 +1,5 @@
 (function() {
 	define(function(require, exports, module) {
-		var test = require('js/test');
+		console.info('App start')
 	});
-
 }).call(this);
