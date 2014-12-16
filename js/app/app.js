@@ -1,6 +1,3 @@
-(function() {
-	define(function(require, exports, module) {
-		var test = require('test');
-	});
-
-}).call(this);
+define(function(require, module, exports) {
+	require('module/test-start');
+});

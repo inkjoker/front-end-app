@@ -1,14 +1,25 @@
 {
-	"name": "cosmetics_app",
-	"directory" : "vendor",
-	"dependencies": {
-		"jquery" : "~2.0.3",
-		"requirejs" : "~2.1.8",
-		"magnific-popup" : "~0.9.9",
-		"jquery.validation" : "~1.13.0",
-		"jquery.customSelect" : "*",
-		"angular-perfect-scrollbar" : "*",
-		"bolster.bxSlider" : "*",
-		"jsrender" : "~1.0.0"
-	}
+  "name": "application",
+  "version": "0.0.0.1",
+  "homepage": "https://github.com/inkjoker/front-end-app",
+  "authors": [
+    "inkjoker <s.saltty@yahoo.com>"
+  ],
+  "description": "application core",
+  "main": "bower",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "underscore": "~1.7.0",
+    "requirejs": "~2.1.15"
+  }
 }
